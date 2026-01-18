@@ -7,14 +7,28 @@ dotenv.config();
 async function main() {
   const port = process.env.PORT || 3001;
 
-  console.log('🚀 ContentHub Backend Starting...');
+  console.log('🚀 ContentHub Backend Starting...\n');
   console.log(`📊 Environment: ${process.env.NODE_ENV || 'development'}`);
-  console.log(`🔌 Port: ${port}`);
+  console.log(`🔌 Port: ${port}\n`);
 
-  // TODO: Initialize Fastify server in Phase 6
-  // TODO: Start cron jobs in Phase 5
+  // Import and start scheduler
+  const { ScraperScheduler } = await import('./services/scraper/scheduler');
+  const { db } = await import('./db/connection');
+
+  // Start the scraper scheduler
+  const scheduler = new ScraperScheduler();
+  scheduler.start();
+
+  // Graceful shutdown
+  process.on('SIGINT', () => {
+    console.log('\n\n🛑 Shutting down gracefully...');
+    scheduler.stop();
+    db.close();
+    process.exit(0);
+  });
 
   console.log('✅ Backend initialized successfully!');
+  console.log('💡 Press Ctrl+C to stop\n');
 }
 
 main().catch((error) => {
