@@ -1,6 +1,14 @@
-# ContentHub MVP - AI 驱动的内容生产系统
+# 🚀 ContentHub MVP - AI 驱动的内容生产系统
+
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.7-blue)](https://www.typescriptlang.org/)
+[![Next.js](https://img.shields.io/badge/Next.js-14-black)](https://nextjs.org/)
+[![OpenAI](https://img.shields.io/badge/OpenAI-GPT--4o-green)](https://openai.com/)
+[![Supabase](https://img.shields.io/badge/Supabase-PostgreSQL-green)](https://supabase.com/)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 一个基于 AI 的自动化内容生产系统，每天自动生成高质量文章，用于多平台发布赚取收益。
+
+[English](./README_EN.md) | 简体中文
 
 ## ✨ 核心功能
 
