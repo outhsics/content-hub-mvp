@@ -7,7 +7,15 @@
     "dev": "tsx watch src/index.ts",
     "build": "tsc",
     "start": "node dist/index.js",
-    "test": "tsx src/test.ts"
+    "test": "tsx src/db/test.ts",
+    "test:scraper": "tsx src/services/scraper/test.ts",
+    "test:scraper:scheduler": "tsx src/services/scraper/test.ts scheduler",
+    "test:ai": "tsx src/services/ai/test.ts",
+    "test:ai:score": "tsx src/services/ai/test.ts score",
+    "test:ai:title": "tsx src/services/ai/test.ts title",
+    "test:ai:rewrite": "tsx src/services/ai/test.ts rewrite",
+    "test:ai:batch": "tsx src/services/ai/test.ts batch",
+    "test:daily": "tsx src/scripts/test-daily-generation.ts"
   },
   "keywords": ["ai", "content", "automation"],
   "author": "",
