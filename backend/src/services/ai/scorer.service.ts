@@ -1,4 +1,4 @@
-import openai, { MODELS, rateLimiter } from './openai.client';
+import ai, { MODELS, rateLimiter } from './openai.client';
 import { db } from '../../db/connection';
 
 export interface ScoreResult {
@@ -50,7 +50,7 @@ export class ArticleScorer {
 
       console.log(`  🤖 Scoring article: ${title.substring(0, 50)}...`);
 
-      const response = await openai.chat.completions.create({
+      const response = await ai.chat.completions.create({
         model: MODELS.FAST,
         messages: [
           {

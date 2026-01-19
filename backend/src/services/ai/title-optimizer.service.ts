@@ -1,4 +1,4 @@
-import openai, { MODELS, rateLimiter } from './openai.client';
+import ai, { MODELS, rateLimiter } from './openai.client';
 
 export interface TitleOption {
   title: string;
@@ -46,7 +46,7 @@ ${platformGuidance}
 
       console.log(`  📝 Generating ${count} titles for ${platform}...`);
 
-      const response = await openai.chat.completions.create({
+      const response = await ai.chat.completions.create({
         model: MODELS.FAST,
         messages: [
           {

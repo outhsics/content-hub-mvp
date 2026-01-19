@@ -1,4 +1,4 @@
-import openai, { MODELS, rateLimiter } from './openai.client';
+import ai, { MODELS, rateLimiter } from './openai.client';
 import { TitleOptimizer } from './title-optimizer.service';
 import { db } from '../../db/connection';
 
@@ -154,7 +154,7 @@ export class ContentRewriter {
 
       await rateLimiter.wait();
 
-      const response = await openai.chat.completions.create({
+      const response = await ai.chat.completions.create({
         model: MODELS.QUALITY,
         messages: [
           {
